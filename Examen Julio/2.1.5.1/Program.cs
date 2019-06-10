@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace _2._1._1._1
+namespace _2._1._5._1
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.Write("Introduce un número: ");
-            int numero = Convert.ToInt32(Console.ReadLine());
+            int num = Convert.ToInt32(Console.ReadLine());
 
-            if (numero % 2 == 0)
+            if ((num % 2 == 0) || (num % 3 == 0))
             {
-                Console.WriteLine("El {0} es par", numero);
+                Console.WriteLine("El número es múltiplo de 2 o 3");
             }
             else
             {
-                Console.WriteLine("El {0} es impar", numero);
+                Console.WriteLine("El número no es múltiplo de 2 o 3");
             }
             Console.ReadLine();
         }
