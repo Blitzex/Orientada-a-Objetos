@@ -11,15 +11,15 @@ namespace _2._1._9._1
 
             switch (num)
             {
-                case '1': Console.WriteLine("Uno");
+                case 1: Console.WriteLine("Uno");
                     break;
-                case '2': Console.WriteLine("Dos");
+                case 2: Console.WriteLine("Dos");
                     break;
-                case '3': Console.WriteLine("Tres");
+                case 3: Console.WriteLine("Tres");
                     break;
-                case '4': Console.WriteLine("Cuatro");
+                case 4: Console.WriteLine("Cuatro");
                     break;
-                case '5':Console.WriteLine("Cinco");
+                case 5: Console.WriteLine("Cinco");
                     break;
                 default: Console.WriteLine("El número no está entre el 1 y el 5");
                     break;
