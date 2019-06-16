@@ -1,0 +1,87 @@
+﻿using System;
+
+namespace _4._1._4._5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                string[] nombres = new string[10];
+                int cantidad = 0;
+                int capacidad = 10;
+                bool programa = true;
+                while (programa)
+                {
+                    Console.Write("¿Que operación quieres hacer?: ");
+                    Console.WriteLine("Añadir = 1, Insertar = 2, Borrar = 3, Mostrar array =4, Salir = 5");
+                   
+                    int opcion = Convert.ToInt32(Console.ReadLine());
+                    switch (opcion)
+                    {
+                        case 1:
+                            Console.Write("Introduce un nombre: ");
+                            string nombre = Console.ReadLine();
+                            if (cantidad < capacidad)
+                            {
+                                nombres[cantidad] = nombre;
+                                cantidad++;
+                            }
+                            else Console.WriteLine("El array está completo");
+                            break;
+                        case 2:
+                            Console.Write("Introduce un nombre: ");
+                            nombre = Console.ReadLine();
+                            Console.Write("Introduce la posición donde quieres insertarlo: ");
+                           
+                            int posicionInsertar = Convert.ToInt32(Console.ReadLine());
+                            if (cantidad < capacidad)
+                            {
+                                for (int i = cantidad; i > posicionInsertar - 1; i--)
+                                {
+                                    nombres[i] = nombres[i - 1];
+                                }
+                                nombres[posicionInsertar - 1] = nombre;
+                                cantidad++;
+                            }
+                            else Console.WriteLine("El array está completo");
+                            break;
+                        case 3:
+                            Console.Write("Introduce la posición del nombre que quieres eliminar: ");
+                           
+                            int posicionBorrar = Convert.ToInt32(Console.ReadLine());
+                            for (int i = posicionBorrar - 1; i <= cantidad - 1; i++)
+                            {
+                                nombres[i] = nombres[i + 1];
+                                if (cantidad == 0)
+                                {
+                                    Console.WriteLine("No hay contenido en el array");
+                                }
+                            }
+                            cantidad--;
+                            break;
+                        case 4:
+                            for (int i = 0; i < cantidad; i++)
+                            {
+                                Console.WriteLine("{0} ", nombres[i]);
+                            }
+                            break;
+                        case 5:
+                            Console.WriteLine("¡Nos vemos!");
+                            programa = false;
+                            break;
+                        default:
+                            Console.Write("Introduce un número válido");
+                            break;
+                    }
+                }
+            }
+            catch (Exception errorEncontrado)
+            {
+                Console.WriteLine("Se ha producido un error: {0}", errorEncontrado.Message);
+            }
+            Console.ReadLine();
+        }
+    }
+}
